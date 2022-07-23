@@ -41,12 +41,13 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "app1",
+      name: "remoteSolidJsApp",
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
         "./Counter": "./src/Counter.jsx",
         "./CounterWrapper": "./src/CounterWrapper.jsx",
+        "./UserWrapper": "./src/UserWrapper.jsx",
       },
       shared: {
         ...deps,

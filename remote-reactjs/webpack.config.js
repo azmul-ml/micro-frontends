@@ -41,11 +41,12 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "app2",
+      name: "remoteReactJsApp",
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
         "./Add": "./src/Add.jsx",
+        "./Photo": "./src/Photo.jsx",
       },
       shared: {
         ...deps,

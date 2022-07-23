@@ -18,7 +18,7 @@ const devConfig = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'helloVue',
+            name: 'remoteVueJsApp',
             filename: 'remoteEntry.js',
             exposes: {
                 './HelloVueApp': './src/bootstrap'

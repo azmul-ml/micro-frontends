@@ -1,31 +1,24 @@
 import React, { useRef, useEffect } from "react";
-import ReactDOM from "react-dom";
+import CounterWrapper from "remoteSolidJsApp/CounterWrapper";
+import Add from "remoteReactJsApp/Add";
+import { mount } from "remoteVueJsApp/HelloVueApp";
 
-import "./index.scss";
-import CounterWrapper from "app1/CounterWrapper";
-import Add from "app2/Add";
-import { mount } from 'helloVue/HelloVueApp'
-
-const App = () => {
-  const divRef = useRef(null);
-  const vueRef = useRef(null);
+export default function App() {
+  const solidJsAppRef = useRef(null);
+  const vueJsAppRef = useRef(null);
 
   useEffect(() => {
-    CounterWrapper(divRef.current);
-    mount(vueRef.current)
+    CounterWrapper(solidJsAppRef.current);
+    mount(vueJsAppRef.current);
   }, []);
 
   return (
-    <div className="mt-10 text-xl mx-auto max-w-6xl">
-      <div>Host App: ReactJS</div>
-      <hr />
-      <br />
-      <div ref={divRef}></div>
+    <div>
+      <div ref={solidJsAppRef}></div>
       <br />
       <Add />
       <br />
-      <div ref={vueRef}></div>
+      <div ref={vueJsAppRef}></div>
     </div>
   );
-};
-ReactDOM.render(<App />, document.getElementById("app"));
+}

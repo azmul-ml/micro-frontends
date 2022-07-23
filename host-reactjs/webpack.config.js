@@ -44,9 +44,9 @@ module.exports = {
       name: "react_host",
       filename: "remoteEntry.js",
       remotes: {
-        app1: "app1@http://localhost:3000/remoteEntry.js",
-        app2: "app2@http://localhost:3002/remoteEntry.js",
-        helloVue: 'helloVue@http://localhost:8082/remoteEntry.js',
+        remoteSolidJsApp: "remoteSolidJsApp@http://localhost:3000/remoteEntry.js",
+        remoteReactJsApp: "remoteReactJsApp@http://localhost:3002/remoteEntry.js",
+        remoteVueJsApp: 'remoteVueJsApp@http://localhost:8082/remoteEntry.js',
       },
       exposes: {},
       shared: {
